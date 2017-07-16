@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import mockCarsApi from "../api/mockCarsApi";
+import './CarFilter.css';
 
 class CarFilter extends Component {
 	constructor(props){
@@ -29,15 +30,16 @@ class CarFilter extends Component {
 		return cars;
 	}
 
-	dynamicFilter() {
+	dynamicFilter(event) {
+		let searchedWord = event.target.value;
 		let synonymsList = this.getSynonyms();
-		let searchedWord = document.querySelector('#search').value;	
 		let keys = Object.keys(synonymsList)
 
 		keys.forEach((key)=>{
-			let values = synonymsList[key];
-			values.forEach((val)=> {
-				if (searchedWord.length > 0 && val.indexOf(searchedWord) !== -1) {
+			let synonymsPerMakes = synonymsList[key];
+
+			synonymsPerMakes.forEach((val)=> {
+				if (searchedWord.length > 1 && val.indexOf(searchedWord) !== -1) {
 					searchedWord = key;
 				}
 			})
