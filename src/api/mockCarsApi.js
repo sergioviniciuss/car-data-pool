@@ -1,11 +1,7 @@
-const synonyms = [
-	{
-		volkswagen: ["vw", "wagen"]
-	},
-	{
-		audi: ["power","A1","A3"]
-	}
-];
+const synonyms = {
+	"volkswagen": ["vw", "popular car"],
+	"mercedes": ["benz", "mclaren"]
+}
 
 const cars = [
 	{

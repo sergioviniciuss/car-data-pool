@@ -10,8 +10,13 @@ class CarFilter extends Component {
 			 listedItems: []
 		};
 
+		this.synonyms = this.getSynonyms.bind(this);
 		this.getCars = this.getCars.bind(this);
 		this.dynamicFilter = this.dynamicFilter.bind(this);
+	}
+
+	getSynonyms(){
+		return mockCarsApi.getSynonyms();
 	}
 
 	componentWillMount() {
@@ -25,14 +30,24 @@ class CarFilter extends Component {
 	}
 
 	dynamicFilter() {
-		console.log("car filter...");
-		let searchedWord = document.querySelector('#search').value;
+		let synonymsList = this.getSynonyms();
+		let searchedWord = document.querySelector('#search').value;	
+		let keys = Object.keys(synonymsList)
 
+		keys.forEach((key)=>{
+			let values = synonymsList[key];
+			values.forEach((val)=> {
+				if (searchedWord.length > 0 && val.indexOf(searchedWord) !== -1) {
+					searchedWord = key;
+				}
+			})
+		})
 		let filteredRows = this.state.initialItems;
 
 		filteredRows = filteredRows.filter((car)=>{
 			return car.make.toLowerCase().search(searchedWord.toLowerCase()) !== -1;
 		});
+
 		this.setState({
 			listedItems: filteredRows
 		})
