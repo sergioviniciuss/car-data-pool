@@ -6,43 +6,51 @@ const synonyms = {
 const cars = [
 	{
 		make: "Volkswagen",
-		model: "Fusca",
-		year: "1991"
+		model: "Golf",
+		year: "2017",
+		logo: "http://www.carlogos.org/logo/Volkswagen-logo.jpg"
 	},
 	{
 		make: "Volkswagen",
 		model: "New Beatle",
-		year: "2002"
+		year: "2002",
+		logo: "http://www.carlogos.org/logo/Volkswagen-logo.jpg"
 	},
 	{
 		make: "Volkswagen",
-		model: "Voyage",
-		year: "1995"
+		model: "Polo",
+		year: "2010",
+		logo: "http://www.carlogos.org/logo/Volkswagen-logo.jpg"
 	},
 	{
 		make: "Audi",
-		model: "A3",
-		year: "2000"
+		model: "A5",
+		year: "2012",
+		logo: "http://www.carlogos.org/logo/Volkswagen-logo.jpg"
 	},
 	{
 		make: "Audi",
 		model: "A4",
-		year: "2004"
+		year: "2014",
+		logo: "http://www.carlogos.org/logo/Audi-logo.jpg"
 	},
 	{
 		make: "Audi",
 		model: "TT",
-		year: "2014"
+		year: "2016",
+		logo: "http://www.carlogos.org/logo/Audi-logo.jpg"
 	},
 	{
 		make: "Mercedes",
 		model: "SLK",
-		year: "2001"
+		year: "2001",
+		logo: "http://www.carlogos.org/logo/Mercedes-Benz-logo.jpg"
 	},
 	{
 		make: "Mercedes",
 		model: "CLA",
-		year: "2002"
+		year: "2002",
+		logo: "http://www.carlogos.org/logo/Mercedes-Benz-logo.jpg"
 	}
 ];
 
