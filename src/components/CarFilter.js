@@ -58,22 +58,22 @@ class CarFilter extends Component {
 
 	render() {
 		return(
-			<div>
-				<div className="">
-					<input id="search" type="search" placeholder="type to search" onChange={this.dynamicFilter}/>
+			<div className='container'>
+				<div className='search-block'>
+					<input id='search' type='search' placeholder='type to search' onChange={this.dynamicFilter}/>
 				</div>
-				<table id="cars-list">
-					<thead>
+				<table id='cars-list'>
+					<thead className='table-header'>
 						<tr>
 							<th>Make</th>
 							<th>Model</th>
 							<th>Year</th>
 						</tr>
 					</thead>
-					<tbody className="">
+					<tbody className='table-body'>
 						{ 
 							this.state.listedItems.map((car, index) =>
-								<tr key={index.toString()}>
+								<tr className='table-row' key={index.toString()}>
 									<td>{car.make}</td>
 									<td>{car.model}</td>
 									<td>{car.year}</td>
