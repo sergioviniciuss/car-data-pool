@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import mockCarsApi from "../api/mockCarsApi";
 import './CarFilter.css';
+import FilterRow from "./FilterRow";
 
 class CarFilter extends Component {
 	constructor(props){
@@ -73,11 +74,11 @@ class CarFilter extends Component {
 					<tbody className='table-body'>
 						{ 
 							this.state.listedItems.map((car, index) =>
-								<tr className='table-row' key={index.toString()}>
-									<td>{car.make}</td>
-									<td>{car.model}</td>
-									<td>{car.year}</td>
-								</tr>
+								<FilterRow 
+									key={index.toString()} 
+									make={car.make}
+									model={car.model}
+									year={car.year} />
 							)
 						}
 					</tbody>

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CarFilter from './CarFilter';
+import FilterRow from './FilterRow';
 import { mount, shallow } from 'enzyme';
 import mockCarsApi from '../api/mockCarsApi';
 
@@ -15,7 +16,7 @@ describe('filter creation', () => {
 
 describe('component filtering', () => {
 	it('renders a table listing all the available cars', () => {
-		const wrapper = shallow(<CarFilter />);
+		const wrapper = mount(<CarFilter />);
 		expect(wrapper.find('tbody tr')).toHaveLength(numberOfCars);
 	});
 
